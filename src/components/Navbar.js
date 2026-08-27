@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-export default function Navbar() {
+export default function Navbar({ language, setLanguage, translations }) {
   const [isOpen, setIsOpen] = useState(false);
 
   const scrollToSection = (sectionId) => {
@@ -32,20 +32,33 @@ export default function Navbar() {
                 onClick={() => scrollToSection('about')}
                 className="text-gray-700 hover:text-dark-slate px-3 py-2 text-sm font-medium transition"
               >
-                Hakkımda
+                {translations.nav.about}
               </button>
               <button
                 onClick={() => scrollToSection('projects')}
                 className="text-gray-700 hover:text-dark-slate px-3 py-2 text-sm font-medium transition"
               >
-                Projeler
+                {translations.nav.projects}
               </button>
               <button
                 onClick={() => scrollToSection('contact')}
                 className="bg-dark-slate text-white hover:bg-accent-gray px-6 py-2 rounded-lg text-sm font-medium transition"
               >
-                İletişim
+                {translations.nav.contact}
               </button>
+              <div className="flex items-center gap-1 border border-gray-200 rounded-lg p-1" aria-label="Language selection">
+                {['en', 'tr'].map((option) => (
+                  <button
+                    key={option}
+                    type="button"
+                    onClick={() => setLanguage(option)}
+                    className={`px-2 py-1 rounded text-xs font-semibold uppercase transition ${language === option ? 'bg-dark-slate text-white' : 'text-gray-500 hover:text-dark-slate'}`}
+                    aria-pressed={language === option}
+                  >
+                    {option}
+                  </button>
+                ))}
+              </div>
             </div>
           </div>
 
@@ -54,6 +67,8 @@ export default function Navbar() {
             <button
               onClick={() => setIsOpen(!isOpen)}
               className="text-dark-slate hover:text-accent-gray focus:outline-none"
+              aria-label={translations.nav.openMenu}
+              aria-expanded={isOpen}
             >
               <svg
                 className="h-6 w-6"
@@ -82,20 +97,33 @@ export default function Navbar() {
               onClick={() => scrollToSection('about')}
               className="text-gray-700 hover:text-dark-slate block w-full text-left px-3 py-2 rounded-md text-base font-medium"
             >
-              Hakkımda
+              {translations.nav.about}
             </button>
             <button
               onClick={() => scrollToSection('projects')}
               className="text-gray-700 hover:text-dark-slate block w-full text-left px-3 py-2 rounded-md text-base font-medium"
             >
-              Projeler
+              {translations.nav.projects}
             </button>
             <button
               onClick={() => scrollToSection('contact')}
               className="bg-dark-slate text-white block w-full text-left px-3 py-2 rounded-md text-base font-medium"
             >
-              İletişim
+              {translations.nav.contact}
             </button>
+            <div className="flex gap-2 px-3 pt-2">
+              {['en', 'tr'].map((option) => (
+                <button
+                  key={option}
+                  type="button"
+                  onClick={() => setLanguage(option)}
+                  className={`px-3 py-1 rounded text-xs font-semibold uppercase ${language === option ? 'bg-dark-slate text-white' : 'bg-white text-gray-500'}`}
+                  aria-pressed={language === option}
+                >
+                  {option}
+                </button>
+              ))}
+            </div>
           </div>
         </div>
       )}

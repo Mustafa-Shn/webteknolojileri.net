@@ -1,34 +1,17 @@
 import React from 'react';
 
-export default function About() {
+export default function About({ translations }) {
   return (
     <section id="about" className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
       <div className="max-w-6xl mx-auto">
         <div className="grid md:grid-cols-2 gap-12 items-center">
           {/* Text Content */}
           <div className="space-y-6">
-            <h2 className="text-4xl sm:text-5xl font-bold text-dark-slate">Hakkımda</h2>
+            <h2 className="text-4xl sm:text-5xl font-bold text-dark-slate">{translations.about.title}</h2>
 
-            <p className="text-gray-700 leading-relaxed text-lg">
-              Erciyes Üniversitesi Bilgisayar Programcılığı Bölümünden mezun olduktan sonra zorunlu askerlik hizmetimi askeri eğitimlerin yanı sıra yazıhanede bilgisayar başında tamamladım. Görevim askeri malzemeler envanter takibi, günlük askeri araç görevlendirmeleri, yazışmaların hazırlanması, raporlamalar ve diğer evrak işleriydi.
-            </p>
-            <p className="text-gray-700 leading-relaxed text-lg">              
-              Zorunlu askerlik hizmetim sonrası ilk iş tecrübem olan küçük ölçekli bir firmada IT destek ve donanım yazılım teknik servis teknikerliği yaptım. ( Kablolama, network, bilgisayar donanım ve yazılım desteği )
-            </p>  
-            <p className="text-gray-700 leading-relaxed text-lg">
-              Sonrasında bir bilişim firmasında yaklaşık 2 sene Front-End / Back-End programcı olarak çalıştım.
-              Buradan edindiğim tecrübe ile uzun bir süre freelance olarak işimi sürdürdüm, çok sayıda web sitesi geliştirdim. Yurtiçi ve yurtdışı bir çok iş yaptım.
-            </p>  
-            <p className="text-gray-700 leading-relaxed text-lg">
-              Daha sonra <b>Bilkent Holding</b> bünyesinde faaliyet yürüten <b>Mersin Şehir Hastanesi</b>'ndeki PPP Projesinde yaklaşık 7 sene boyunca; Kartlı Geçiş Sistemleri yönetimi, IT Teknik Destek ve Hakediş Uzmanı  olarak çalıştım.
-              Kurumdaki HBYS sistemindeki proje ile ilgili dataları işleyerek ileri düzey günlük haftalık aylık raporlamalar ve hakediş raporları çıkarıyordum. Bu raporları ve dökümantasyonları hastane yönetiminin hakediş toplantısına sunuyordum.
-              Bu sayede bilgi dağarcığıma kartlı geçiş sistemleri, veri analizi, ileri düzey excel, raporlama ve hakediş konularını da eklemiş oldum.
-            </p>  
-            <p className="text-gray-700 leading-relaxed text-lg"> 
-              IT Teknik Servis, HTML, CSS, ASP, PHP ile başladığım yolculuğum,
-              zamanla modern mobil-web teknolojilerine evrildi.
-              Kullanıcı deneyimini ön planda tutarak, minimal, estetik, işlevsel mobil/web uygulamaları tasarlıyor ve geliştiriyorum.
-            </p>           
+            {translations.about.paragraphs.map((paragraph) => (
+              <p key={paragraph} className="text-gray-700 leading-relaxed text-lg">{paragraph}</p>
+            ))}
 
             {/* Skills */}
             <div className="pt-6">
@@ -51,7 +34,7 @@ export default function About() {
               <div className="flex items-center justify-center h-full">
                 <div className="text-center">
                   <div className="text-5xl font-bold text-accent-gray opacity-10 mb-2">20+</div>
-                  <p className="text-accent-gray text-sm opacity-60">Yıl Deneyim</p>
+                  <p className="text-accent-gray text-sm opacity-60">{translations.about.experience}</p>
                 </div>
               </div>
             </div>

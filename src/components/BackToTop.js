@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-export default function BackToTop() {
+export default function BackToTop({ translations }) {
   const [isVisible, setIsVisible] = useState(false);
 
   // Sayfanın kaydırma konumunu izle
@@ -33,8 +33,8 @@ export default function BackToTop() {
       <button
         onClick={scrollToTop}
         className="fixed bottom-8 right-8 bg-gray-600 hover:bg-gray-700 text-white p-3 rounded-lg shadow-lg transition-all duration-300 transform hover:scale-110 z-50"
-        aria-label="Sayfanın başına git"
-        title="Sayfanın başına git"
+        aria-label={translations.backToTop}
+        title={translations.backToTop}
       >
         <svg
           className="w-6 h-6"

@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default function Footer() {
+export default function Footer({ translations }) {
   const currentYear = new Date().getFullYear();
 
   return (
@@ -10,31 +10,31 @@ export default function Footer() {
           {/* Brand */}
           <div>
             <h4 className="text-2xl font-bold mb-2">Webteknolojileri.Net</h4>            
-            <p className="text-gray-400">Modern web - mobil geliştirme ve tasarım çözümleri.</p>
+            <p className="text-gray-400">{translations.footer.description}</p>
           </div>
 
           {/* Quick Links */}
           <div>
-            <h4 className="font-bold mb-4">Hızlı Linkler</h4>
+            <h4 className="font-bold mb-4">{translations.footer.quickLinks}</h4>
             <ul className="space-y-2 text-gray-400">
               <li>
                 <a href="#home" className="hover:text-white transition">
-                  Ana Sayfa
+                  {translations.footer.home}
                 </a>
               </li>
               <li>
                 <a href="#about" className="hover:text-white transition">
-                  Hakkımda
+                  {translations.nav.about}
                 </a>
               </li>
               <li>
                 <a href="#projects" className="hover:text-white transition">
-                  Projeler
+                  {translations.nav.projects}
                 </a>
               </li>
               <li>
                 <a href="#contact" className="hover:text-white transition">
-                  İletişim
+                  {translations.footer.contact}
                 </a>
               </li>
             </ul>
@@ -54,10 +54,10 @@ export default function Footer() {
         <div className="border-t border-gray-700 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <p className="text-gray-400 text-sm">
-              © {currentYear} Tüm hakları saklıdır.
+              © {currentYear} {translations.footer.rights}
             </p>
             <p className="text-gray-400 text-sm mt-4 md:mt-0">
-              Tasarım ve geliştirme: <a href="https://wwwwebteknolojileri.net" className="hover:text-white transition">Webteknolojileri.Net</a>
+              {translations.footer.design} <a href="https://wwwwebteknolojileri.net" className="hover:text-white transition">Webteknolojileri.Net</a>
             </p>
           </div>
         </div>

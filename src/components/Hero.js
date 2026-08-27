@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default function Hero() {
+export default function Hero({ translations }) {
   const scrollToSection = (sectionId) => {
     const element = document.getElementById(sectionId);
     if (element) {
@@ -14,13 +14,11 @@ export default function Hero() {
         {/* Hero Content */}
         <div className="space-y-6">
           <h1 className="text-5xl sm:text-6xl md:text-7xl font-bold text-dark-slate leading-tight">
-            Merhaba, Ben <span className="text-accent-gray">Mustafa Şahin</span>
+            {translations.hero.titleLead} <span className="text-accent-gray">Mustafa Şahin</span>
           </h1>
 
           <p className="text-lg sm:text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed">
-            Erciyes Üniversitesi Bilgisayar Programcılığı Bölümü Mezunuyum.
-            <p></p>Uzun yıllar IT Teknik Servis, Front-End , Back-End ve CMS uygulamaları konularında çalıştıktan sonra, günümüzün yazılım alanındaki gelişmelerine ayak uydurarak Vibe Coding e geçiş yapıp, modern web uygulamaları ve mobil uygulamalar
-            geliştirmekteyim.
+            {translations.hero.description}
           </p>
 
           {/* CTA Buttons */}
@@ -29,13 +27,13 @@ export default function Hero() {
               onClick={() => scrollToSection('projects')}
               className="px-8 py-4 bg-dark-slate text-white font-semibold rounded-lg hover:bg-accent-gray transition duration-300 transform hover:scale-105"
             >
-              Örnek Projelerime Bak
+              {translations.hero.projectsButton}
             </button>
             <button
               onClick={() => scrollToSection('contact')}
               className="px-8 py-4 border-2 border-dark-slate text-dark-slate font-semibold rounded-lg hover:bg-dark-slate hover:text-white transition duration-300"
             >
-              Benimle İletişime Geç
+              {translations.hero.contactButton}
             </button>
           </div>
         </div>

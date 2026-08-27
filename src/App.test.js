@@ -1,8 +1,14 @@
-import { render, screen } from '@testing-library/react';
+import { fireEvent, render, screen } from '@testing-library/react';
 import App from './App';
 
-test('renders learn react link', () => {
+test('renders in English by default and switches to Turkish', () => {
   render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+
+  expect(screen.getByRole('heading', { name: /hello, i am mustafa şahin/i })).toBeInTheDocument();
+  expect(screen.getByRole('button', { name: 'tr' })).toHaveAttribute('aria-pressed', 'false');
+
+  fireEvent.click(screen.getByRole('button', { name: 'tr' }));
+
+  expect(screen.getByRole('heading', { name: /merhaba, ben mustafa şahin/i })).toBeInTheDocument();
+  expect(screen.getByRole('button', { name: 'tr' })).toHaveAttribute('aria-pressed', 'true');
 });
