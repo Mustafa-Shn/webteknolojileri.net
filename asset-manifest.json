@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/webteknolojileri.net/static/css/main.8bf6510a.css",
+    "main.js": "/webteknolojileri.net/static/js/main.cb4b3402.js",
+    "static/js/453.15752fa0.chunk.js": "/webteknolojileri.net/static/js/453.15752fa0.chunk.js",
+    "index.html": "/webteknolojileri.net/index.html",
+    "main.8bf6510a.css.map": "/webteknolojileri.net/static/css/main.8bf6510a.css.map",
+    "main.cb4b3402.js.map": "/webteknolojileri.net/static/js/main.cb4b3402.js.map",
+    "453.15752fa0.chunk.js.map": "/webteknolojileri.net/static/js/453.15752fa0.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.8bf6510a.css",
+    "static/js/main.cb4b3402.js"
+  ]
+}
